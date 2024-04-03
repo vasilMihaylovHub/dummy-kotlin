@@ -1,0 +1,14 @@
+<configuration>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <Pattern> %logger{1}.%M.%L : %replace(%msg){'[\r\n]+', '###'} %replace(%ex){'[\r\n]+', '###'}%nopex%n</Pattern>
+        </encoder>
+    </appender>
+
+    <!-- Set root logger level to INFO and its only appender to STDOUT -->
+    <root level="info">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+</configuration>
